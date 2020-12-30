@@ -1,6 +1,5 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-
 <!-- Styles block -->
 
 {% block styles%}
@@ -10,7 +9,6 @@
 
 <!-- Content block -->
 {% block content %}
-
 <div class="container">
     <form>
         <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
@@ -19,21 +17,41 @@
 
 </div>
 
+
 <!-- Popular movie -->
-<h3> Popular Movies</h3>
-<ul>
-    {{ macro.displayMovieList(popular)}}
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center" style="font-weight: bolder;"> Popular Movies</h3>
+        </div>
+        <ul>
+            {{ macro.displayMovieList(popular)}}
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center" style="font-weight: bolder;"> Upcoming Movies</h3>
+        </div>
+        <ul>
+            {{ macro.displayMovieList(upcoming)}}
+        </ul>
+    </div>
+</div>
 <!-- Upcoming movie  -->
-<h3> Upcoming Movies </h3>
-<ul>
-    {{ macro.displayMovieList(upcoming)}}
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center" style="font-weight: bolder;">Now Showing</h3>
+        </div>
+        <ul>
+            {{ macro.displayMovieList(now_showing)}}
+        </ul>
+
+    </div>
+</div>
 <!-- Now showing movie -->
-<h3>Now Showing</h3>
-<ul>
-    {{ macro.displayMovieList(now_showing)}}
-</ul>
 
 
 {% endblock%}
